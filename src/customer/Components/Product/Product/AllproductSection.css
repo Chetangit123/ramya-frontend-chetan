@@ -1,0 +1,16 @@
+.filters-sidebar {
+    max-height: calc(100vh - 120px);
+    /* adjust 120px to your top header height */
+    overflow-y: auto;
+    padding-right: 1rem;
+    /* optional for scrollbar spacing */
+}
+
+.filters-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.filters-sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}

@@ -1,0 +1,16 @@
+    .navbar_container{
+        background-color: #551F3D;
+    }
+    /* .navBars{
+        background-color: #551F3D;
+
+    } */
+    .header_counter_bg{
+        background-color: #551F3D;
+    }
+    .header_logo{   
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+ 

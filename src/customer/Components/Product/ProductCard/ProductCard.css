@@ -1,0 +1,113 @@
+    .productCard {
+        width: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+    }
+
+    .productCard:hover {
+        transform: translateY(-5px);
+    }
+
+
+    
+
+    .main-image,
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 190% 120%;
+        transition: opacity 0.3s ease-in-out;
+    }
+    @media screen and (max-width: 768px) {
+    .main-image,
+    .hover-image {
+            object-position: 190% 0% !important;
+        }
+    }
+    .hover-image {
+        opacity: 0;
+    }
+
+    .image-hover-container:hover .hover-image {
+        opacity: 1;
+    }
+
+    .custom_labels_new {
+        position: absolute;
+        bottom: 8px;
+        height: 24px;
+        left: 8px;
+        background-color: #551f3d;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .textPart {
+        font-size: 14px;
+    }
+.image-hover-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    aspect-ratio: 3 / 4; /* Adjust ratio as needed */
+}
+
+.main-image,
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .image-hover-container {
+        aspect-ratio: 3 / 4; /* Same ratio on mobile */
+    }
+}
+
+    /* ✅ Remove max-width from here so card grows fully */
+    .product-card-wrapper {
+        width: 100%;
+    }
+
+    @media (max-width: 560px) {
+        .product-card-wrapper {
+            width: 50%;
+        }
+
+        .image-hover-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            height: 210px !important;
+        }
+    }
+        @media (max-width: 343px) {
+        .product-card-wrapper {
+            width: 50%;
+        }
+
+        .image-hover-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            height: 150px !important;
+        }
+    }
