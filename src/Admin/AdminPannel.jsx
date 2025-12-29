@@ -31,6 +31,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser, logout } from "../Redux/Auth/Action";
 import { useEffect } from "react";
 import { deepPurple } from "@mui/material/colors";
+import CreateBannerForm from "./componets/banner/CreateBannerForm";
+import UpdateBannerForm from "./componets/banner/UpdateBannerForm";
 
 const drawerWidth = 240;
 
@@ -43,6 +45,8 @@ const menu = [
   // {name:"Weekly Overview",path:"/admin"},
   // {name:"Monthly Overview",path:"/admin"},
   {name:"Add Product",path:"/admin/product/create"},
+  {name: "Banner",path:"/admin/banner/create"},
+  {name: "Banner Update" , path:"/admin/banner/update"}
 ];
 
 export default function AdminPannel() {
@@ -163,6 +167,8 @@ export default function AdminPannel() {
           <Routes>s
             <Route path="/" element={ <OrdersTable />}></Route>
             <Route path="/product/create" element={<CreateProductForm/>}></Route>
+            <Route path="/banner/create" element={<CreateBannerForm/>}></Route>
+             <Route path="/banner/update" element={<UpdateBannerForm/>}></Route>
             <Route path="/products/update/:productId" element={<UpdateProductForm/>}></Route>
             <Route path="/products" element={<ProductsTable/>}></Route>
             <Route path="/orders" element={<OrdersTable/>}></Route>

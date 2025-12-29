@@ -1,31 +1,26 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Navigation from './customer/Components/Navbar/Navigation';
-import CustomerRoutes from './Routers/CustomerRoutes';
-import AdminRoutes from './Routers/AdminRoutes';
-import NotFound from './Pages/Notfound';
-import AdminPannel from './Admin/AdminPannel';
-import { useEffect } from 'react';
-import AdminProtectedRoute from './Routers/AdminProtectedRoute';
-// import Routers from './Routers/Routers';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import CustomerRoutes from "./Routers/CustomerRoutes";
+import AdminRoutes from "./Routers/AdminRoutes";
+import AdminPannel from "./Admin/AdminPannel";
+import AdminProtectedRoute from "./Routers/AdminProtectedRoute";
+import { useEffect } from "react";
 
 function App() {
-  const isAdmin=true;
   useEffect(() => {
-  sessionStorage.removeItem("hasReloaded"); // ✅ Reset reload state on first render
-}, []);
+    sessionStorage.removeItem("hasReloaded");
+  }, []);
 
   return (
-    <div className="">
-      
-      <Routes>
-        <Route path="/*" element={<CustomerRoutes />} />
-        <Route path="/admin/*" element={
-          <AdminPannel />
-      } />
-        
-      </Routes>
-    </div>
+    <Routes>
+      {/* Customer routes */}
+      <Route path="/*" element={<CustomerRoutes />} />
+
+      {/* 🔒 Protected Admin Routes */}
+      <Route element={<AdminProtectedRoute />}>
+        <Route path="/admin/*" element={<AdminPannel />} />
+      </Route>
+    </Routes>
   );
 }
 
