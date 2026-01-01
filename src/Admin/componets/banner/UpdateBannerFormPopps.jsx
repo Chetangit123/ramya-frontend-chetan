@@ -74,7 +74,7 @@ const UpdateBannerFormPopps = ({ banner, onSuccess }) => {
       }
 
       const res = await fetch(
-        `http://localhost:5454/api/banners/${banner._id}`,
+        `https://backend.ramyavastram.com/api/banners/${banner._id}`,
         {
           method: "PUT",
           body: formData,

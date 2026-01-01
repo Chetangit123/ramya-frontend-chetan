@@ -60,7 +60,7 @@ const CreateBannerForm = () => {
       formData.append("link", bannerData.link);
       formData.append("isActive", bannerData.isActive);
 
-      const res = await fetch("http://localhost:5454/api/banners", {
+      const res = await fetch("https://backend.ramyavastram.com/api/banners", {
         method: "POST",
         body: formData,
       });

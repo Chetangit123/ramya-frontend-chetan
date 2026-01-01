@@ -22,7 +22,7 @@ const BannerList = () => {
 
   const fetchBanners = async () => {
     try {
-      const res = await fetch("http://localhost:5454/api/banners");
+      const res = await fetch("https://backend.ramyavastram.com/api/banners");
       const data = await res.json();
       setBanners(data);
     } catch (error) {
